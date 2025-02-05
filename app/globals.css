@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --main-color: #25CAAC;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,3 +21,8 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+body h1::selection{
+  background-color: gray;
+}
+
