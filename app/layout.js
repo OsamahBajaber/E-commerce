@@ -2,6 +2,13 @@ import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import Header from "./_component/Header";
 import Footer from "./_component/Footer";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 
 const ubuntu = Ubuntu({ subsets: ["latin"], weight: "400" });
 
@@ -12,12 +19,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={ubuntu.className}>
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={ubuntu.className}>
+          <Header />
+          {/* <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn> */}
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

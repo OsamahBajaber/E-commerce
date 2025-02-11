@@ -15,8 +15,8 @@ function ProductSection() {
         })
     }
   return (
-    <div className='text-black'>
-
+    <div id='product-section' className='mx-28 my-32 text-black'>
+        <h2 className='my-4 text-2xl'>Our Latest Products</h2>
         <ProductList productList={productList}/>
     </div>
   )

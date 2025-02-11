@@ -1,37 +1,41 @@
+"use client"
+import { useUser } from '@clerk/nextjs'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 
 function Header() {
-  return (
+  const {user} = useUser()
+  return user && (
     <header className="bg-white">
   <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
-    <a className="block " href="#">
+    <Link className="block " href="/">
       <span className="sr-only">Home</span>
       <Image src="/logo.svg" alt='logo' width={45} height={45}/>
-    </a>
+    </Link>
 
     <div className="flex flex-1 items-center justify-end md:justify-between">
       <nav aria-label="Global" className="hidden md:block">
         <ul className="flex items-center gap-6 text-sm">
           <li>
-            <a className="text-primary transition hover:text-primaryHover" href="#"> Home </a>
+            <Link className="text-primary transition hover:text-primaryHover" href="/"> Home </Link>
           </li>
 
           <li>
-            <a className="text-primary transition hover:text-primaryHover" href="#"> Explore </a>
+            <Link className="text-primary transition hover:text-primaryHover" href="#product-section"> Explore </Link>
           </li>
 
           <li>
-            <a className="text-primary transition hover:text-primaryHover" href="#"> Projects </a>
+            <Link className="text-primary transition hover:text-primaryHover" href="#"> Projects </Link>
           </li>
 
           <li>
-            <a className="text-primary transition hover:text-primaryHover" href="#"> About Us </a>
+            <Link className="text-primary transition hover:text-primaryHover" href="#"> About Us </Link>
           </li>
 
           <li>
-            <a className="text-primary transition hover:text-primaryHover" href="#"> Contact Us </a>
+            <Link className="text-primary transition hover:text-primaryHover" href="#"> Contact Us </Link>
           </li>
 
           
