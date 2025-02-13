@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import ProductApis from "@/app/_utils/ProductApis";
-import BreadCrumbs from "@/app/_component/BreadCrumbs";
+import ProductApis from "../../_utils/ProductApis";
+import BreadCrumbs from "../../_component/BreadCrumbs";
 import ProductBanner from "./ProductBanner";
 import ProductInfo from "./ProductInfo";
-import ProductList from "@/app/_component/ProductList";
+import ProductList from "../../_component/ProductList";
 
 function ProductDetails() {
   const params = useParams();

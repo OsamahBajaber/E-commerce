@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PaymentsIcon from '@mui/icons-material/Payments';
-import ProductApis from '@/app/_utils/ProductApis';
 
 function ProductInfo({productInfo}) {
 
