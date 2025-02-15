@@ -71,7 +71,7 @@ function Cart() {
       </Link>
 
       <Link
-        href="#"
+        href="/checkout"
         className="block rounded-md bg-primary px-5 py-3 text-sm text-gray-100 transition hover:bg-primaryHover"
       >
         Checkout

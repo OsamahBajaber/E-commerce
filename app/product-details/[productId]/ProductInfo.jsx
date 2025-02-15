@@ -4,8 +4,9 @@ import PaymentsIcon from '@mui/icons-material/Payments';
 import { useUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
 import CartApis from "../../_utils/CartApis"
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { CartContext } from '../../_contexts/CartContext';
+import Link from 'next/link';
 
 function ProductInfo({productInfo}) {
     const {user} = useUser();
@@ -51,22 +52,25 @@ function ProductInfo({productInfo}) {
     
     {/* Action Buttons */}
         <form className="mt-4 flex flex-col sm:flex-row gap-4">
-        <button
-            onClick={handleCartClick}
-            className="block w-full shadow-md rounded-md bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:bg-gray-400 hover:scale-105"
-        >
-            <ShoppingCartIcon className='me-1' />
-            Add to Cart
-        </button>
-
-        <button
-            type="button"
-            
-            className="block w-full shadow-md rounded-md bg-primary px-4 py-3 text-sm font-medium text-white transition hover:bg-primaryHover hover:scale-105"
-        >
-            <PaymentsIcon className='me-2'/>
-            Buy Now
-        </button>
+            <button
+                onClick={handleCartClick}
+                className="block w-full shadow-md rounded-md bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:bg-gray-400 hover:scale-105"
+            >
+                <ShoppingCartIcon className='me-1' />
+                Add to Cart
+            </button>
+        
+            <button
+                type="button"
+                className="block w-full shadow-md rounded-md bg-primary px-4 py-3 text-sm font-medium text-white transition hover:bg-primaryHover hover:scale-105"
+            >
+                <Link href="/checkout">
+                    <PaymentsIcon className='me-2'/>
+                    Buy Now
+                </Link>
+            </button>
+        
+        
         </form>
         {/* ===== Action Buttons ===== */}
     </div>
