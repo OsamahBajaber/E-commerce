@@ -10,13 +10,12 @@ function ProductSection() {
     },[])
     const getLatestProduct_ = ()=>{
         ProductApis.getLatestProducts().then(response=>{
-            console.log(response.data.data)
             setProductList(response.data.data)
         })
     }
   return (
     <div id='product-section' className='mx-28 my-32 text-black'>
-        <h2 className='my-4 text-2xl'>Our Latest Products</h2>
+        <h2 className='my-6 -mx-10 text-3xl'>Our Latest Products</h2>
         <ProductList productList={productList}/>
     </div>
   )

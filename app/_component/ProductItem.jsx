@@ -12,7 +12,7 @@ function ProductItem({product}) {
     src={product.banner.url}
     alt="banner"
 
-    className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
+    className="h-64 w-full object-fill transition duration-500 group-hover:scale-105 sm:h-72"
   />
   {/* ===== Product Image ===== */}
     {/* Details Container */}
