@@ -18,9 +18,7 @@ function page() {
     CartApis.deleteCartItem(id)
       .then((response) => {
         if (response) {
-          setCart((prevCart) =>
-            prevCart.filter((item) => item.id !== response.data.data.documentId)
-          );
+          setCart((prevCart) => prevCart.filter((item) => item.id !== id));
         }
       })
       .catch((error) => {
@@ -28,7 +26,7 @@ function page() {
       });
   };
   return (
-    <section className="h-[100vh]">
+    <section className=" min-h-[100vh]">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <header className="text-center">
